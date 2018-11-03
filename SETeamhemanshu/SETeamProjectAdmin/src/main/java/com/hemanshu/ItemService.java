@@ -1,45 +1,39 @@
-/*package com.hemanshu;
+package com.hemanshu;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
 public class ItemService {
 
-private static ItemsRepository itemsRepository;
+	private final ItemRepository itemRepository;
 	
-	public ItemService(ItemsRepository itemsRepository) {
-		this.itemsRepository=itemsRepository;
+	public ItemService(ItemRepository itemRepository) {
+		this.itemRepository=itemRepository;
 	}
 	
 	
-	
-	public static List<Items> showAllItems(){
+	public List<Items> showAllitems(){
 		List<Items> items = new ArrayList<Items>();
-		for(Items item : itemsRepository.findAll()) {		
-			items.add(item); }
+		for(Items item : itemRepository.findAll()) {
+			items.add(item);
+		}
+		
 		return items;
 	}
 	
-	public void deleteMyItem(int id) {
-		itemsRepository.deleteById(id);
+	public void deleteMyitem(int ID) {
+		itemRepository.deleteById(ID);
 	}
 	
-	
-	public Items findByItemID(String ItemID) {
-		return itemsRepository.findByItemID(ItemID);
-	}
-
-
-
-	public static void deleteById(int id) {
-		// TODO Auto-generated method stub
-		
+	public Items findByItemIDAndItemname(String item,String itemnam) {
+		return itemRepository.findByItemIDAndItemname(item, itemnam);
 	}
 	
 	
 }
-*/

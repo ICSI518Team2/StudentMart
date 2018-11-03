@@ -17,9 +17,9 @@ private final UserRepository userRepository;
 		this.userRepository=userRepository;
 	}
 	
-	public void saveMyUser(User user ) {
+/*	public void saveMyUser(User user ) {
 		userRepository.save(user);
-	}
+	} */
 	
 	public List<User> showAllUsers(){
 		List<User> users = new ArrayList<User>();
@@ -38,8 +38,8 @@ private final UserRepository userRepository;
 		return userRepository.findById(id);
 	}*/
 	
-	public User findByUsernameAndPassword(String username, String password) {
-		return userRepository.findByUsernameAndPassword(username, password);
+	public User findByEmailIDAndPassword(String email,String pass) {
+		return userRepository.findByEmailIDAndPassword(email, pass);
 	}
 	
 	}
